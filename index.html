@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webinar - Estratégias de Carreira Com LinkedIn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset de email */
         body, html {
@@ -147,6 +148,54 @@
         .social-icons {
             margin-bottom: 20px;
         }
+
+        /* Estilos para a contagem regressiva */
+        .countdown-container {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .timer-display {
+            border: 1px solid #000000;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            padding: 20px 25px;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .timer-numbers {
+            display: flex;
+            justify-content: space-between;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        
+        .timer-labels {
+            border: 1px solid #000;
+            border-radius: 0 0 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            margin-bottom: 30px;
+        }
+        
+        .timer-labels div {
+            width: 25%;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+            color: #17100E;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        
+        .countdown-digit {
+            width: 25%;
+            text-align: center;
+        }
         
         /* Responsividade */
         @media screen and (max-width: 600px) {
@@ -186,6 +235,18 @@
                 display: block;
                 text-align: center;
             }
+            
+            .countdown-container {
+                padding: 0 20px;
+            }
+            
+            .timer-numbers {
+                font-size: 30px;
+            }
+            
+            .timer-labels div {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -220,6 +281,24 @@
                         </tr>
                     </table>
 
+                    <!-- Countdown Section -->
+                    <div class="countdown-container">
+                        <div class="timer-display">
+                            <div class="timer-numbers">
+                                <div class="countdown-digit" id="days">00</div>
+                                <div class="countdown-digit" id="hours">00</div>
+                                <div class="countdown-digit" id="minutes">00</div>
+                                <div class="countdown-digit" id="seconds">00</div>
+                            </div>
+                        </div>
+                        <div class="timer-labels">
+                            <div>dias</div>
+                            <div>horas</div>
+                            <div>minutos</div>
+                            <div>segundos</div>
+                        </div>
+                    </div>
+                    
                     <!-- Why Attend Section -->
                     <table width="100%" role="presentation">
                         <tr>
@@ -251,51 +330,53 @@
                         <tr>
                             <td class="content-padding">
                                 <h2>Opinião de quem já participou</h2>
-                                <div class="divider"></div>
-                                
-                                <!-- Depoimentos -->
-                                <table width="100%" role="presentation" style="margin-bottom: 30px;">
-                                    <tr>
-                                        <td style="padding: 20px; background-color: #f6f6f6; border-radius: 8px; margin-bottom: 15px; display: block;">
-                                            <table width="100%" role="presentation">
-                                                <tr>
-                                                    <td>
-                                                        <p style="font-size: 16px; font-style: italic; margin-bottom: 15px;">"O Webinar da Caroline veio num momento crucial da minha carreira. Fazer o que eu fazia já não me encantava mais. Com a mentoria dela, eu pude definir a melhor estratégia para realizar a minha tão sonhada transição de carreira."</p>
-                                                        <table width="100%" role="presentation">
-                                                            <tr>
-                                                                <td style="vertical-align: middle;">
-                                                                    <p style="font-size: 16px; font-weight: bold; margin: 0;">Jardel Belo, participante da 2ª Edição do Webinar</p>
-                                                                    <!-- <p style="font-size: 14px; margin: 0;">Product Owner</p> -->
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                                
-                                <table width="100%" role="presentation" style="margin-bottom: 30px;">
-                                    <tr>
-                                        <td style="padding: 20px; background-color: #f6f6f6; border-radius: 8px; margin-bottom: 15px; display: block;">
-                                            <table width="100%" role="presentation">
-                                                <tr>
-                                                    <td>
-                                                        <p style="font-size: 16px; font-style: italic; margin-bottom: 15px;">"A Carol foi super atenciosa e disponível desde o primeiro contato que fiz. O webinar sobre o LinkedIn que ela realizou foi super dinâmico e de fácil compreensão. Em todos os momentos ela esteve disposta a responder minhas dúvidas e, com total conhecimento que ela tem da Plataforma procurou disseminar tudo o que sabe."</p>
-                                                        <table width="100%" role="presentation">
-                                                            <tr>
-                                                                <td style="vertical-align: middle;">
-                                                                    <p style="font-size: 16px; font-weight: bold; margin: 0;">Fernanda Antunes, participante da 1ª Edição do Webinar</p>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div class="divider"></div>
+                
+                            <!-- Depoimentos -->
+                            <table width="100%" role="presentation" style="margin-bottom: 30px;">
+                                <tr>
+                                    <td style="padding: 20px; background-color: #f6f6f6; border-radius: 8px; margin-bottom: 15px; display: block;">
+                                        <table width="100%" role="presentation">
+                                            <tr>
+                                                <td>
+                                                    <p style="font-size: 16px; font-style: italic; margin-bottom: 15px;">"O Webinar da Caroline veio num momento crucial da minha carreira. Fazer o que eu fazia já não me encantava mais. Com a mentoria dela, eu pude definir a melhor estratégia para realizar a minha tão sonhada transição
+                                                        de carreira."</p>
+                                                    <table width="100%" role="presentation">
+                                                        <tr>
+                                                            <td style="vertical-align: middle;">
+                                                                <p style="font-size: 16px; font-weight: bold; margin: 0;">Jardel Belo, participante da 2ª Edição do Webinar</p>
+                                                                <!-- <p style="font-size: 14px; margin: 0;">Product Owner</p> -->
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                            </tr>
+                        </table>
+
+            <table width="100%" role="presentation" style="margin-bottom: 30px;">
+                <tr>
+                    <td style="padding: 20px; background-color: #f6f6f6; border-radius: 8px; margin-bottom: 15px; display: block;">
+                        <table width="100%" role="presentation">
+                            <tr>
+                                <td>
+                                    <p style="font-size: 16px; font-style: italic; margin-bottom: 15px;">"A Carol foi super atenciosa e disponível desde o primeiro contato que fiz. O webinar sobre o LinkedIn que ela realizou foi super dinâmico e de fácil compreensão. Em todos os momentos ela esteve disposta a responder
+                                        minhas dúvidas e, com total conhecimento que ela tem da Plataforma procurou disseminar tudo o que sabe."</p>
+                                    <table width="100%" role="presentation">
+                                        <tr>
+                                            <td style="vertical-align: middle;">
+                                                <p style="font-size: 16px; font-weight: bold; margin: 0;">Fernanda Antunes, participante da 1ª Edição do Webinar</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
                     
                     <!-- Speaker Section -->
                     <table width="100%" role="presentation">
@@ -352,5 +433,41 @@ Se você quer aprender a usar o LinkedIn de forma estratégica para dar o próxi
             </tr>
         </table>
     </div>
+
+<script>
+        // Definir a data alvo para o webinar: 26 de abril de 2025 às 9h
+        const targetDate = new Date("2025-04-26T09:00:00");
+        
+        // Atualizar o contador a cada segundo
+        const countdown = setInterval(function() {
+            // Obter data e hora atuais
+            const now = new Date().getTime();
+            
+            // Calcular a diferença entre a data alvo e agora
+            const distance = targetDate - now;
+            
+            // Calcular dias, horas, minutos e segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Exibir os resultados com zero à esquerda quando necessário
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // Se a contagem regressiva terminou, exibir uma mensagem
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+</script>
+    
 </body>
 </html>
